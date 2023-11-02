@@ -1,217 +1,184 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
-%----------------------------------------------------------------------------------------
-%	DOCUMENT DEFINITION
-%----------------------------------------------------------------------------------------
-
-% article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
-
-%----------------------------------------------------------------------------------------
-%	FONT
-%----------------------------------------------------------------------------------------
-
-% % fontspec allows you to use TTF/OTF fonts directly
-% \usepackage{fontspec}
-% \defaultfontfeatures{Ligatures=TeX}
-
-% % modified for ShareLaTeX use
-% \setmainfont[
-% SmallCapsFont = Fontin-SmallCaps.otf,
-% BoldFont = Fontin-Bold.otf,
-% ItalicFont = Fontin-Italic.otf
-% ]
-% {Fontin.otf}
-
-%----------------------------------------------------------------------------------------
-%	PACKAGES
-%----------------------------------------------------------------------------------------
+\documentclass[a4paper,11pt]{article}
 \usepackage{url}
 \usepackage{parskip} 	
-
-%other packages for formatting
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
-
-%tabularx environment
 \usepackage{tabularx}
-
-%for lists within experience section
 \usepackage{enumitem}
-
-% centered version of 'X' col. type
 \newcolumntype{C}{>{\centering\arraybackslash}X} 
-
-%to prevent spillover of tabular into next pages
 \usepackage{supertabular}
 \usepackage{tabularx}
 \newlength{\fullcollw}
 \setlength{\fullcollw}{0.47\textwidth}
-
-%custom \section
 \usepackage{titlesec}				
 \usepackage{multicol}
 \usepackage{multirow}
-
-%CV Sections inspired by: 
-%http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
-
-%for publications
+\titlespacing{\section}{0pt}{8pt}{8pt}
 \usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
-%Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
 \addbibresource{citations.bib}
 \setlength\bibitemsep{1em}
-
-%for social icons
 \usepackage{fontawesome5}
-
-%debug page outer frames
-%\usepackage{showframe}
-
-
-% job listing environments
-\newenvironment{jobshort}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    }
-    {
-    }
-
-\newenvironment{joblong}[2]
-    {
-    \begin{tabularx}{\linewidth}{@{}l X r@{}}
-    \textbf{#1} & \hfill &  #2 \\[3.75pt]
-    \end{tabularx}
-    \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt,label=--]
-    }
-    {
-    \end{itemize}
-    \end{minipage}    
-    }
-
-
-
-%----------------------------------------------------------------------------------------
-%	BEGIN DOCUMENT
-%----------------------------------------------------------------------------------------
 \begin{document}
+\pagestyle{empty}
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1 \vspace{-2pt}}
+  }
+}
 
-% non-numbered pages
-\pagestyle{empty} 
+\newcommand{\classesList}[4]{
+    \item\small{
+        {#1 #2 #3 #4 \vspace{-2pt}}
+  }
+}
 
-%----------------------------------------------------------------------------------------
-%	TITLE
-%----------------------------------------------------------------------------------------
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-2pt}\item
+    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & \textbf{\small #2} \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-7pt}
+}
 
-% \begin{tabularx}{\linewidth}{ @{}X X@{} }
-% \huge{Your Name}\vspace{2pt} & \hfill \emoji{incoming-envelope} email@email.com \\
-% \raisebox{-0.05\height}\faGithub\ username \ | \
-% \raisebox{-0.00\height}\faLinkedin\ username \ | \ \raisebox{-0.05\height}\faGlobe \ mysite.com  & \hfill \emoji{calling} number
-% \end{tabularx}
+\newcommand{\resumeSubSubheading}[2]{
+    \item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textit{\small#1} & \textit{\small #2} \\
+    \end{tabular*}\vspace{-7pt}
+}
 
+\newcommand{\resumeProjectHeading}[2]{
+    \item
+    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
+      \small#1 & \textbf{\small #2}\\
+    \end{tabular*}\vspace{-7pt}
+}
+
+\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
+
+\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
+\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+
+
+
+
+
+%Head
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Suvan Banerjee} \\[7.5pt]
+\href{https://github.com/suvanbanerjee}{\raisebox{-0.05\height}\faGithub\ suvanbanerjee} \ $|$ \ 
+\href{https://linkedin.com/in/suvanbanerjee}{\raisebox{-0.05\height}\faLinkedin\ suvanbanerjee} \ $|$ \  \ 
+\href{mailto:banerjeesuvan@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ banerjeesuvan@gmail.com} \ $|$ \ 
+\href{tel:+919462122507}{\raisebox{-0.05\height}\faMobile \ +91 9462122507} \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-% EXPERIENCE SECTIONS
-%----------------------------------------------------------------------------------------
+%copy from suraj res
+%-----------EDUCATION-----------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV is automatically generated and deployed using the \href{https://github.com/jitinnair1/autoCV}{autoCV} template along with GitHub Actions such that a new version of the CV is compiled, published and ready for use when the cv.tex file is updated. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
-%Experience
-\section{Work Experience}
-
-\begin{jobshort}{Designation}{Jan 2021 - present}
-long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width
-\end{jobshort}
-
-
-\begin{joblong}{Designation}{Mar 2019 - Jan 2021}
-\item long long line of blah blah that will wrap when the table fills the column width
-\item again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
-\end{joblong}
-  
-%Projects
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Dayananda Sagar College Of Engineering}{SGPA: 9.05}
+      {B.E in Information Science (VTU)}{2022 - 2026}
+  \resumeSubHeadingListEnd
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Kendriya Vidayalaya No.1 Bikaner}{87.4\%}
+      {CBSE - HSC/SSC}{2020 - 2022} \\
+  \resumeSubHeadingListEnd
+\vspace{-10pt}
+\section{Skills}
+\begin{tabularx}{\linewidth}{@{}l X@{}}
+\textbf{Languages:} &  \normalsize{Python, C, C++, JavaScript, Bash } \\
+\textbf{Frameworks/Technology:}  &  \normalsize{Linux, Cryptography, NumPy, Matplotlib, TensorFlow}\\
+\end{tabularx}
 \section{Projects}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+
+
+\textbf{Portfolio} | \textit{HTML,CSS,JS} & \hfill \href{https://suvanbanerjee.github.io/Portfolio}{Portfolio }
+\href{https://github.com/suvanbanerjee/Portfolio}{GitHub} \\ [1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}
+     \item Showcase of your personal and professional projects.
+     \item Includes projects such as Battery  Optimizer, Smart Traffic System, Tic-Tac-Toe and more.
+     \end{itemize}
+     }  \\
+
+
+\textbf{Drowsiness Alert System}|\textit{Python} & \hfill \href{https://github.com/suvanbanerjee/SleepSense}{GitHub} \\[0.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}
+     \item Contributed to a project involving an AI-based clip-on module for cars and was in top 10.
+\item Utilized AI and computer vision to detect driver drowsiness with 93\% accuracy.
+\item Operates during both day and night conditions and cost-effective.
+     \end{itemize} 
+     
+     }  \\
+
+
+
+\textbf{NMAP Web Console} | \textit{Bash,HTML} & \hfill \href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{Demo  }
+\href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{GitHub}
+\\ [1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}
+     \item Participated in a Hackathon project utilizing Bash and HTML.
+\item Used CGI to fetch and format nmap terminal output on a web browser.
+\item Enabled users to view results conveniently and generate PDF reports using basic HTML.
+     \end{itemize}
+     }  \\
+
+
+\textbf{Smart Traffic Management System} | \textit{Python} & \hfill \href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{GitHub} \\ [1.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{itemize}
+     \item Implemented WLAN data transfer to send real-time traffic density information for signal and data logging and utilized parallel computing for efficient data processing and traffic management
+\item Utilized computer vision for adaptive traffic signal control and real-time traffic density calculation.
+\item Utilized Arduino to control traffic lights, enhancing traffic management and signal synchronization.
+     \end{itemize}
+     }  \\
+
+
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	EDUCATION
-%----------------------------------------------------------------------------------------
-\section{Education}
-\begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+\section{Achievements and Certifications}
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
 
-2021 & Class 10th Some Board \hfill  (Grades) \\
+
+\textbf{5 Star Language Proficiency in Python} | \textit{ Hackerrank}
+\\ [1.75pt] 
+\textbf{4 Star Language Proficiency in C++} | \textit{ Hackerrank}
+\\ [1.75pt]
+\textbf{Top 10 Among 48 Teams in Hackathon} | \textit{ Hackman v6}
+\\ [1.75pt]
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
 
-%----------------------------------------------------------------------------------------
-%	SKILLS
-%----------------------------------------------------------------------------------------
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+\section{Extracurricular}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{PointBlank - Member} & \hfill Dec 2022 - Present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{PointBlank is a group of over 80 programmers who work to promote coding culture in colleges by participating in 10+ contests and organising technical seminars}
 \end{tabularx}
 
-\vfill
-\center{\footnotesize Last updated: \today}
-
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Arcis - Member} & \hfill Dec 2022 - Feb 2023 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{Team Arcis is the Official Aero Design of Dayananda Sagar College of Engineering. They participate in the SAE Aero Design Challenge and AIAA DBF, two of the biggest student design competitions, held annually in USA.}
+\end{tabularx}
 \end{document}
