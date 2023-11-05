@@ -1,8 +1,8 @@
-\documentclass[a4paper,11pt]{article}
+\documentclass[a4paper,10pt]{article}
+
 \usepackage{url}
 \usepackage{parskip} 	
 \RequirePackage{color}
-\RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[scale=0.9]{geometry}
 \usepackage{tabularx}
@@ -11,20 +11,21 @@
 \usepackage{supertabular}
 \usepackage{tabularx}
 \newlength{\fullcollw}
-\setlength{\fullcollw}{0.47\textwidth}
+\setlength{\fullcollw}{0.2\textwidth}
 \usepackage{titlesec}				
 \usepackage{multicol}
 \usepackage{multirow}
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{8pt}{8pt}
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
+\titlespacing{\section}{0pt}{4pt}{4pt}
 \usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.6}
+\definecolor{linkcolour}{rgb}{0,0,0}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 \usepackage{fontawesome5}
+
+
 \begin{document}
+
+
 \pagestyle{empty}
 \newcommand{\resumeItem}[1]{
   \item\small{
@@ -72,113 +73,149 @@
 
 
 
+%----------Header--------------
+
+
+  \begin{tabularx}{\linewidth}{@{} C @{}}
+
+    \Huge{Suvan Banerjee} \\[7.5pt]
+
+    \href{https://github.com/suvanbanerjee}{\raisebox{-0.05\height}\faGithub\ suvanbanerjee} \ $|$ \ 
+    \href{https://linkedin.com/in/suvanbanerjee}{\raisebox{-0.05\height}\faLinkedin\ suvanbanerjee} \ $|$ \  \ 
+    \href{mailto:banerjeesuvan@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ banerjeesuvan@gmail.com} \ $|$ \ 
+    \href{tel:+919462122507}{\raisebox{-0.05\height}\faMobile \ +91 9462122507}
+    \\
+  \end{tabularx}
+
+
+%----------Education-----------
+
+
+  \section{\\Education}
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {Dayananda Sagar College Of Engineering}{SGPA: 9.05}
+        {B.E in Information Science (VTU)}{2022 - 2026}
+        \hspace{4pt}
+    \resumeSubHeadingListEnd
+    \resumeSubHeadingListStart
+      \resumeSubheading
+        {Kendriya Vidayalaya No.1 Bikaner}{87.4\%}
+        {CBSE - HSC/SSC}{2020 - 2022} \\
+    \resumeSubHeadingListEnd
+  \vspace{-10pt}
+
+
+%----------Skills--------------
+
+\vspace{6pt}
+  \section{Skills}
+  \begin{tabularx}{\linewidth}{@{}l X@{}}
+    \textbf{Languages:} &  \normalsize{Python, C, C++, JavaScript, Bash } \\
+    \textbf{Frameworks/Technology:}  &  \normalsize{Linux, Git, Github, Arduino, Cryptography, Yolo}\\
+  \end{tabularx}
+  \vspace{-5pt}
+
+
+%----------Projects------------
+
+
+  \section{Projects}
+    
+    \vspace{7pt}
+    
+  \begin{tabularx}{\linewidth}{ @{}l r@{} }
+  \vspace{-5pt}
+    \textbf{Portfolio} | \textit{HTML,CSS,JS} & \hfill \href{https://suvanbanerjee.github.io/Portfolio}{Portfolio}\\
+    \multicolumn{1}{@{}X@{}}{
+    \begin{itemize}
+        \item Showcase of your personal and professional projects.
+        \item Includes projects such as Battery  Optimizer, Smart Traffic System, Tic-Tac-Toe and more.
+    \end{itemize}} \vspace{-7pt} \\
+
+\vspace{-5pt}
+    \textbf{Smart Traffic Management System} | \textit{Python} & \hfill \href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{GitHub} \\
+      \multicolumn{1}{@{}X@{}}{
+        \begin{itemize}
+            \item Utilized computer vision for adaptive traffic signal control and real-time traffic density calculation.
+            \item Utilized Arduino to control traffic lights, enhancing traffic management and signal synchronization.
+            \item Implemented WLAN data transfer to send real-time traffic density information for signal and data logging and utilized parallel computing for efficient data processing and traffic management \vspace{-10pt} 
+        \end{itemize}
+            }  \\ \
+
+\vspace{-5pt}
+    \textbf{Drowsiness Alert System}|\textit{Python} & \hfill \href{https://github.com/suvanbanerjee/SleepSense}{GitHub} \\
+    \multicolumn{1}{@{}X@{}}{
+    \begin{itemize}
+        \item Contributed to a project involving an AI-based clip-on module for cars and was in top 10.
+    \item Utilized AI and computer vision to detect driver drowsiness with 93\% accuracy.
+    \item Operates during both day and night conditions and cost-effective. \vspace{-10pt} 
+        \end{itemize} 
+        \vspace{-7pt} 
+        }  \\
+
+
+\vspace{-5pt}
+    \textbf{Message Encryptor}|\textit{Python} & \hfill \href{https://github.com/suvanbanerjee/SleepSense}{GitHub} \\
+    \multicolumn{1}{@{}X@{}}{
+    \begin{itemize}
+        \item This script encrypts a message using a password.
+    \item It produces an encrypted file that can be safely shared, and the recipient can decrypt it using the provided password. \vspace{-10pt} 
+        \end{itemize} 
+        \vspace{-7pt} 
+        }  \\
+
+\vspace{-5pt}
+    \textbf{NMAP Web Console} | \textit{Bash,HTML} & \hfill
+    \href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{GitHub}
+    \\
+    \multicolumn{1}{@{}X@{}}{
+    \begin{itemize}
+        \item Participated in a Hackathon project utilizing Bash and HTML.
+    \item Used CGI to fetch and format nmap terminal output on a web browser.
+    \item Enabled users to view results conveniently and generate PDF reports using basic HTML.\vspace{-10pt} 
+    \end{itemize}
+        }  \\ 
+\vspace{2pt} 
+  \end{tabularx}
+
+
+%----------Achivements---------
+
+
+  \section{Achievements and Certifications}
+
+
+    \begin{tabularx}{\linewidth}{ @{}l r@{} }
+      \textbf{5 Star Language Proficiency in Python} | \textit{ Hackerrank} \\ [1.75pt] 
+      \textbf{4 Star Language Proficiency in C++} | \textit{ Hackerrank} \\ [1.75pt]
+      \textbf{Top 10 Among 48 Teams in Hackathon} | \textit{ Hackman v6} \\ [1.75pt]
+      \textbf{Secured 5th rank in DataHack among 70} | \textit{DSCE} \\ [1.75pt]
+    \end{tabularx}
+\vspace{2pt} 
+
+%----------Extracurricular-----
+
+
+  \section{Extracurricular}
+
+    \begin{tabularx}{\linewidth}{ @{}l r@{} }
+      \textbf{PointBlank - Member} & \hfill Dec 2022 - Present \\[3.75pt]
+      \multicolumn{2}{@{}X@{}}{PointBlank is a group of over 80 programmers who work to promote coding culture in colleges by participating in more than 10 contests and organising technical seminars}
+    \end{tabularx}
+
+    
+     \begin{tabularx}{\linewidth}{ @{}l r@{} }
+      \textbf{GDSC DSI - Member} & \hfill Feb 2023 - Present \\[3.75pt]
+      \multicolumn{2}{@{}X@{}}{Google Developer Student Clubs (GDSC) is a student club that organizes coding workshops and technical seminars. GDSC has a culture of learning and collaboration, and members work on coding projects and open-source contributions.}
+    \end{tabularx}
+
+    
+    \begin{tabularx}{\linewidth}{ @{}l r@{} }
+      \textbf{Arcis - Member} & \hfill Dec 2022 - Feb 2023 \\[3.75pt]
+      \multicolumn{2}{@{}X@{}}{Team Arcis is the Official Aero Design of Dayananda Sagar College of Engineering. They participate in the SAE Aero Design Challenge and AIAA DBF, two of the biggest student design competitions, held annually in USA.}
+    \end{tabularx}
 
 
 
-%Head
-\begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Suvan Banerjee} \\[7.5pt]
-\href{https://github.com/suvanbanerjee}{\raisebox{-0.05\height}\faGithub\ suvanbanerjee} \ $|$ \ 
-\href{https://linkedin.com/in/suvanbanerjee}{\raisebox{-0.05\height}\faLinkedin\ suvanbanerjee} \ $|$ \  \ 
-\href{mailto:banerjeesuvan@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ banerjeesuvan@gmail.com} \ $|$ \ 
-\href{tel:+919462122507}{\raisebox{-0.05\height}\faMobile \ +91 9462122507} \\
-\end{tabularx}
-
-%copy from suraj res
-%-----------EDUCATION-----------
-
-\section{Education}
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Dayananda Sagar College Of Engineering}{SGPA: 9.05}
-      {B.E in Information Science (VTU)}{2022 - 2026}
-  \resumeSubHeadingListEnd
-  \resumeSubHeadingListStart
-    \resumeSubheading
-      {Kendriya Vidayalaya No.1 Bikaner}{87.4\%}
-      {CBSE - HSC/SSC}{2020 - 2022} \\
-  \resumeSubHeadingListEnd
-\vspace{-10pt}
-\section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-\textbf{Languages:} &  \normalsize{Python, C, C++, JavaScript, Bash } \\
-\textbf{Frameworks/Technology:}  &  \normalsize{Linux, Cryptography, NumPy, Matplotlib, TensorFlow}\\
-\end{tabularx}
-\section{Projects}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-
-
-\textbf{Portfolio} | \textit{HTML,CSS,JS} & \hfill \href{https://suvanbanerjee.github.io/Portfolio}{Portfolio }
-\href{https://github.com/suvanbanerjee/Portfolio}{GitHub} \\ [1.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}
-     \item Showcase of your personal and professional projects.
-     \item Includes projects such as Battery  Optimizer, Smart Traffic System, Tic-Tac-Toe and more.
-     \end{itemize}
-     }  \\
-
-
-\textbf{Drowsiness Alert System}|\textit{Python} & \hfill \href{https://github.com/suvanbanerjee/SleepSense}{GitHub} \\[0.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}
-     \item Contributed to a project involving an AI-based clip-on module for cars and was in top 10.
-\item Utilized AI and computer vision to detect driver drowsiness with 93\% accuracy.
-\item Operates during both day and night conditions and cost-effective.
-     \end{itemize} 
-     
-     }  \\
-
-
-
-\textbf{NMAP Web Console} | \textit{Bash,HTML} & \hfill \href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{Demo  }
-\href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{GitHub}
-\\ [1.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}
-     \item Participated in a Hackathon project utilizing Bash and HTML.
-\item Used CGI to fetch and format nmap terminal output on a web browser.
-\item Enabled users to view results conveniently and generate PDF reports using basic HTML.
-     \end{itemize}
-     }  \\
-
-
-\textbf{Smart Traffic Management System} | \textit{Python} & \hfill \href{https://github.com/suvanbanerjee/nmap-frontend-cgi}{GitHub} \\ [1.75pt]
-\multicolumn{2}{@{}X@{}}{
-\begin{itemize}
-     \item Implemented WLAN data transfer to send real-time traffic density information for signal and data logging and utilized parallel computing for efficient data processing and traffic management
-\item Utilized computer vision for adaptive traffic signal control and real-time traffic density calculation.
-\item Utilized Arduino to control traffic lights, enhancing traffic management and signal synchronization.
-     \end{itemize}
-     }  \\
-
-
-\end{tabularx}
-
-
-\section{Achievements and Certifications}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-
-
-\textbf{5 Star Language Proficiency in Python} | \textit{ Hackerrank}
-\\ [1.75pt] 
-\textbf{4 Star Language Proficiency in C++} | \textit{ Hackerrank}
-\\ [1.75pt]
-\textbf{Top 10 Among 48 Teams in Hackathon} | \textit{ Hackman v6}
-\\ [1.75pt]
-\end{tabularx}
-
-
-\section{Extracurricular}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{PointBlank - Member} & \hfill Dec 2022 - Present \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{PointBlank is a group of over 80 programmers who work to promote coding culture in colleges by participating in 10+ contests and organising technical seminars}
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Arcis - Member} & \hfill Dec 2022 - Feb 2023 \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{Team Arcis is the Official Aero Design of Dayananda Sagar College of Engineering. They participate in the SAE Aero Design Challenge and AIAA DBF, two of the biggest student design competitions, held annually in USA.}
-\end{tabularx}
-\end{document}
+    \end{document}
