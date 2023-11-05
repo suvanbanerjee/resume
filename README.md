@@ -26,8 +26,6 @@ To use this repository and generate your resume:
 3. Compile the LaTeX source to generate the PDF resume.
 4. You can also publish your resume online if desired.
 
-Feel free to modify this README file and the repository to suit your specific needs.
-
 ## AutoCV
 
 This repository is fork of  AutoCV . It is a LaTeX template for creating a clean and organized Resume. It includes a GitHub Action that automatically compiles the Resume in LaTeX format into a PDF and publishes a new PDF version when changes are pushed to the repository. The PDF is published to GitHub Pages
