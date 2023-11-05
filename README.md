@@ -11,7 +11,7 @@ This repository contains my resume and related files.
 
 ## Resume
 
-- [View My Resume](suvanbanerjee.github.io/Resume) (Add a link to your resume PDF or webpage)
+- [View My Resume](suvanbanerjee.github.io/Resume)
 
 ## Introduction
 
