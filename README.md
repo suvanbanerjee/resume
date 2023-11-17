@@ -1,15 +1,17 @@
 # Resume
-<center> 
 
-[![Scan Me](https://upload.wikimedia.org/wikipedia/commons/2/2f/Rickrolling_QR_code.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
-
-</center>
+This repository contains my resume and related files.
 
 ## Table of Contents
 
+- [Resume](#resume)
 - [Introduction](#introduction)
 - [Usage](#usage)
 - [AutoCV](#autocv)
+
+## Resume
+
+- [View My Resume](http://suvanbanerjee.github.io/Resume)
 
 ## Introduction
 
@@ -29,10 +31,3 @@ To use this repository and generate your resume:
 This repository is fork of  AutoCV . It is a LaTeX template for creating a clean and organized Resume. It includes a GitHub Action that automatically compiles the Resume in LaTeX format into a PDF and publishes a new PDF version when changes are pushed to the repository. The PDF is published to GitHub Pages
 
 More information [AutoCV](https://github.com/jitinnair1/autoCV)
-
-
-<center>
-
-[View My Resume](http://suvanbanerjee.github.io/Resume){: .btn}
-
-</center>
