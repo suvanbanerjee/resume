@@ -1,7 +1,9 @@
 # Resume
+<center> 
 
-This repository contains my resume and related files.
+[![Scan Me](https://upload.wikimedia.org/wikipedia/commons/2/2f/Rickrolling_QR_code.png)](https://www.youtube.com/watch?v=dQw4w9WgXcQ)
 
+</center>
 
 ## Table of Contents
 
