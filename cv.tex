@@ -1,231 +1,223 @@
-\documentclass[a4paper,10pt]{article}
-\input{glyphtounicode}
-\pdfgentounicode=1
-\usepackage{url}
-\usepackage{parskip} 	
-\RequirePackage{color}
-\usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
-\geometry{margin=0.35in}
-\usepackage{tabularx}
+%-------------------------
+% Resume in Latex
+% Author : Suvan Banerjee
+% License : MIT
+%------------------------
+
+\documentclass[letterpaper,11pt]{article}
+
+\usepackage{latexsym}
+\usepackage[empty]{fullpage}
+\usepackage{titlesec}
+\usepackage{marvosym}
+\usepackage[usenames,dvipsnames]{color}
+\usepackage{verbatim}
 \usepackage{enumitem}
-\newcolumntype{C}{>{\centering\arraybackslash}X} 
-\usepackage{supertabular}
-\usepackage{tabularx}
-\newlength{\fullcollw}
-\setlength{\fullcollw}{0.2\textwidth}
-\usepackage{titlesec}				
-\usepackage{multicol}
-\usepackage{multirow}
-\titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{4pt}{4pt}
-\usepackage[unicode, draft=false]{hyperref}
-\definecolor{linkcolour}{rgb}{0,0.2,0.7}
-\hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\usepackage{fontawesome5}
-% chktex 8
+\usepackage[pdftex]{hyperref}
+\usepackage{fancyhdr}
+\usepackage{xcolor}
+\hypersetup{
+    colorlinks,
+    linkcolor={red!50!black},
+    citecolor={blue!50!black},
+    urlcolor={blue!80!black}
+}
+
+\pagestyle{fancy}
+\fancyhf{}
+\fancyfoot{}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{0pt}
+
+% Adjust margins
+\addtolength{\oddsidemargin}{-0.375in}
+\addtolength{\evensidemargin}{-0.375in}
+\addtolength{\textwidth}{1in}
+\addtolength{\topmargin}{-.5in}
+\addtolength{\textheight}{1.0in}
+
+\urlstyle{same}
+
+\raggedbottom
+\raggedright
+\setlength{\tabcolsep}{0in}
+
+% Sections formatting
+\titleformat{\section}{
+  \vspace{-4pt}\scshape\raggedright\large
+}{}{0em}{}[\color{black}\titlerule \vspace{-5pt}]
+
+%-------------------------
+% Custom commands
+\newcommand{\resumeItem}[1]{
+  \item\small{
+    {#1}\vspace{-2pt}
+  }
+}
+
+\newcommand{\resumeSubheading}[4]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} & #2 \\
+      \textit{\small#3} & \textit{\small #4} \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\expSubheading}[3]{
+  \vspace{-1pt}\item
+    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
+      \textbf{#1} -- \textit{#2} & #3 \\
+    \end{tabular*}\vspace{-5pt}
+}
+
+\newcommand{\resumeSubItem}[2]{\resumeItem{#1}{#2}\vspace{-4pt}}
+
+\renewcommand{\labelitemii}{$\circ$}
+
+\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=*]}
+\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
+\newcommand{\resumeItemListStart}{\begin{itemize}}
+\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+
+%-------------------------------------------
+% ------------Resume Starts Below-----------
+% ------------------------------------------
 
 
 \begin{document}
 
 
-\pagestyle{empty}
-\newcommand{\resumeItem}[1]{
-  \item\small{
-    {#1 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\classesList}[4]{
-    \item\small{
-        {#1 #2 #3 #4 \vspace{-2pt}}
-  }
-}
-
-\newcommand{\resumeSubheading}[4]{
-  \vspace{-2pt}\item
-    \begin{tabular*}{1.0\textwidth}[t]{l@{\extracolsep{\fill}}r}
-      \textbf{#1} & \textbf{\small #2} \\
-      \textit{\small#3} & \textit{\small #4} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubSubheading}[2]{
-    \item
-    \begin{tabular*}{0.97\textwidth}{l@{\extracolsep{\fill}}r}
-      \textit{\small#1} & \textit{\small #2} \\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeProjectHeading}[2]{
-    \item
-    \begin{tabular*}{1.001\textwidth}{l@{\extracolsep{\fill}}r}
-      \small#1 & \textbf{\small #2}\\
-    \end{tabular*}\vspace{-7pt}
-}
-
-\newcommand{\resumeSubItem}[1]{\resumeItem{#1}\vspace{-4pt}}
-
-\renewcommand\labelitemi{$\vcenter{\hbox{\tiny$\bullet$}}$}
-\renewcommand\labelitemii{$\vcenter{\hbox{\tiny$\bullet$}}$}
-
-\newcommand{\resumeSubHeadingListStart}{\begin{itemize}[leftmargin=0.0in, label={}]}
-\newcommand{\resumeSubHeadingListEnd}{\end{itemize}}
-\newcommand{\resumeItemListStart}{\begin{itemize}}
-\newcommand{\resumeItemListEnd}{\end{itemize}\vspace{-5pt}}
+%----------HEADING-----------------
 
 
-
-%----------Header--------------
-
-
-  \begin{tabularx}{\linewidth}{@{} C @{}}
-
-    \Huge{Suvan Banerjee} \\[7.5pt]
-
-    \href{https://github.com/suvanbanerjee}{\raisebox{-0.05\height}\faGithub\ suvanbanerjee} \ $|$ \ 
-    \href{https://linkedin.com/in/suvanbanerjee}{\raisebox{-0.05\height}\faLinkedin\ suvanbanerjee} \ $|$ \  \ 
-    \href{mailto:banerjeesuvan@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ banerjeesuvan@gmail.com} \ $|$ \ 
-    \href{tel:+919462122507}{\raisebox{-0.05\height}\faMobile \ +91 9462122507}
-    \\
-    \\
-  \end{tabularx}
+\begin{tabular*}{\textwidth}{l@{\extracolsep{\fill}}r}
+  \textbf{\Huge Suvan Banerjee} & {Location : Bengaluru} \\
+  {} & GitHub : \href{https://github.com/suvanbanerjee}{suvanbanerjee} \\
+  \href{mailto:banerjeesuvan@gmail.com}{banerjeesuvan@gmail.com} & Mobile : +91 9462122507 \\
+  \href{https://suvanbanerjee.me/}{suvanbanerjee.me } & LinkedIn : \href{https://www.linkedin.com/in/suvanbanerjee}{suvanbanerjee} \\
+\end{tabular*}
 
 
-%----------Education-----------
+%--------SKILLS------------
 
 
-  \section{Education}
-    \resumeSubHeadingListStart
-      \resumeSubheading
-        {Dayananda Sagar College Of Engineering}{SGPA: 9.05}%
-        {B.E in Information Science (VTU)}{2022--2026}
-        \hspace{4pt}
-    \resumeSubHeadingListEnd
-    \resumeSubHeadingListStart
-      \resumeSubheading
-        {Kendriya Vidyalaya No.1 Bikaner}{87.4\%}
-        {CBSE---Higher Secondary/Senior School}{2020--2022} \\
-    \resumeSubHeadingListEnd
-  \vspace{-15pt}
+\section{Skills}
+
+\textbf{Languages:} Python, JavaScript, C, C++, Bash, Java 
+
+\textbf{Frameworks/Technologies:} FastAPI, Next.js, Medusa.js (Ecommerce), React, Flask, GraphQL, Prisma
+
+\textbf{Developer Tools:} GitHub, Docker, Postman, Cursor, AWS, Google Cloud, Focalboard, Make  
 
 
-%----------Skills--------------
-
-\vspace{6pt}
-  \section{Skills}
-  \begin{tabularx}{\linewidth}{@{}l X@{}}
-    \textbf{Languages:} &  \normalsize{Python, C, C++, JavaScript, Bash } \\
-    \textbf{Frameworks/Technologies:}  &  \normalsize{Linux, Git, Github, Flask, FastAPI, Cryptography, Docker}\\
-  \end{tabularx}
-  \vspace{-5pt}
+%-----------EDUCATION-----------------
 
 
-%----------Experience-----------
-  
-    \section{Experience}
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-      \vspace{-5pt}
-      \textbf{Opensource}|\textit{Open Voice OS -- Remote (May 2024 - Present)} \\
-      \multicolumn{1}{@{}X@{}}{
-        \begin{itemize}
-          \item Open Voice OS is an open-source voice assistant built on top of Mycroft-core.
-          \item Developed entire website using Next.js, Tailwind, along with a blog site, and maintained the same.
-          \item Designed 2 plugins for the voice assistant: one for fetching stock prices and a dependency-free VAD plugin.
-          \item Assisted with localization, contributed to the installer script, added Zorin OS support by writing Ansible roles.
-        \end{itemize}} \vspace{-7pt} \\
-    \end{tabularx}
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-      \vspace{-5pt}
-      \textbf{Full Stack Intern}|\textit{Burdenoff -- Remote (July 2024 - Present)} \\
-      \multicolumn{1}{@{}X@{}}{
-        \begin{itemize}
-          \item Burdenoff is a private consultancy firm that provides services medium to large scale businesses.
-          \item My role is to develop and maintain Ramco Technologies' website and develop a cms for the same.
-          \item Setup the boilerplate for an e-commerce website using Medusa and Next.js and developed the same.
-        \end{itemize}} \vspace{-7pt} \\
-    \end{tabularx}    
+\section{Education}
+  \resumeSubHeadingListStart
+    \resumeSubheading
+      {Dayananda Sagar College of Engineering}{Bengaluru, KA}
+      {B.E in Information Science (VTU);  SGPA: 9.34}{2022 -- 2026}
+    \resumeSubheading
+      {Kendriya Vidyalaya}{Bikaner, RJ}
+      {CBSE – Higher Secondary (Senior School);  87.4\%}{2020 -- 2022}
+  \resumeSubHeadingListEnd
 
 
-%----------Projects------------
+%-----------EXPERIENCE-----------------
 
 
-  \section{Projects}
-    
-    \vspace{7pt}
-    
-  \begin{tabularx}{\linewidth}{ @{}l r@{} }
+\section{Experience}
+  \resumeSubHeadingListStart
 
-    \vspace{-5pt}
-    \textbf{Project Zeta}|\textit{Flask, Supabase} & \hfill \href{https://projectzeta.vercel.app/}{Deployed} \\
-    \multicolumn{1}{@{}X@{}}{
-    \begin{itemize}
-        \item A web platform for teachers where they can create their own ctf like challenges.
-        \item Utilized Flask for backend and Supabase for database.
-        \item Proof of concept for a new way of teaching cybersecurity using a gamified approach.
-    \vspace{-10pt} 
-        \end{itemize} 
-        \vspace{-7pt} 
-        }  \\
+    \expSubheading
+      {Full Stack Intern}{Burdenoff Consultancy}{July 2024 - Present}
+      \resumeItemListStart
+        \resumeItem
+          {Assisted in 3 major client project and one internal project, all of which are deployed and sucessfull}
+          \resumeItem
+          {Designed and built the website for Ramco Industrial Tech Ltd using Strapi CMS and a Vite frontend while clearly understanding requirements and communicating effectively.}
+          \resumeItem
+          {Took ownership of events module for 91Springboard Coworking Space, reducing page access time to under 10ms.}
+          \resumeItem
+          {Learned Medusa.js, an alternative to Shopify, to build HealthBowl—an organic agriculture platform—in just one week and successfully completed a POC along with setting up the boilerplate.}
+      \resumeItemListEnd
 
-\vspace{-5pt}
-    \textbf{Smart Traffic Management System} | \textit{Python, Pyfirmata, ftplib} & \hfill \href{https://github.com/suvanbanerjee/Smart-Traffic-System}{GitHub} \\
-      \multicolumn{1}{@{}X@{}}{
-        \begin{itemize}
-            \item Utilized computer vision (yolo v8) for adaptive traffic signal control and real-time traffic density calculation.
-            \item Utilized Arduino Uno to control traffic lights, enhancing traffic management and signal synchronization.
-            \item Implemented WLAN data transfer using FTP to send real-time traffic density information for signal and data logging and utilized parallel computing for efficient data processing and traffic management \vspace{-10pt} 
-        \end{itemize}
-            }  \\
+  \expSubheading
+      {Open-source Maintainer}{Open Voice OS}{May 2024 - Present}
+      \resumeItemListStart
+        \resumeItem
+          {Open Voice OS is an open-source voice assistant, which allows anyone to build personal secure voice assistant}
+          \resumeItem
+          {Took initiative and (re)developed entire website using Next.js, Tailwind, with blogs increasing performance by 30\% and maintaining it currently.}
+          \resumeItem
+          {Built 2 plugins for the voice assistant: one for fetching stock prices and a dependency-free VAD plugin.}
+          \resumeItem
+          {Assisted with localization, contributed to the installer script, added Zorin OS support by writing Ansible roles.}
+      \resumeItemListEnd
 
-\vspace{-5pt}
-    \textbf{WeatherKit} | \textit{Python, API, Web Scraping} & \hfill
-    \href{https://pypi.org/project/weatherkit/}{PyPi}
-    \\
-    \multicolumn{1}{@{}X@{}}{
-    \begin{itemize}
-        \item A weather forecasting tool that provides weather without API key.
-    \item Utilized Meteo API and web scraping to provide accurate weather information.
-    \item Developers can use address or location coordinates to get weather and forecast information.
-    \vspace{-10pt} 
-    \end{itemize}
-        }  \\ 
-  \end{tabularx}
+  \resumeSubHeadingListEnd
+
+%-----------PROJECTS-----------------
 
 
-%----------Achievements---------
+\section{Projects}
+  \resumeSubHeadingListStart
+
+    \expSubheading
+      {OpenTag}{Next.js, Firebase, Python}{\href{http://opentag.github.io/}{Deployed Project }}
+      \resumeItemListStart
+        \resumeItem
+          {Free Open-source medical ID that provides vital information through an ICE (In Case of Emergency) sticker.}
+        \resumeItem
+          {It offers three modes of operation: online profile stored on Firebase (encrypted), support for serverless tags where all data is encoded in a QR code, and a self-hosted version as a static site that can be deployed anywhere.}
+      \resumeItemListEnd
 
 
-  \section{Achievements and Certifications}
+  \expSubheading
+      {NammaLakes}{FastAPI, RabbitMQ, Vite+React, Recharts, ML (Isolation Forest)}{\href{http://nammalakes.github.io/}{Demo}}
+        \resumeItemListStart
+            \resumeItem
+            {NammaLakes is a distributed IoT-based lake monitoring system. It was a team project, where I developed the backend using FastAPI and assisted in integrating end modules with the dashboard.}
+            \resumeItem
+            {Designed and deployed a fault-tolerant, horizontally scalable server on AWS to log data from connected lakes, incorporating anomaly detection with over 94\% accuracy.}
+        \resumeItemListEnd
 
+    \expSubheading
+    {!GnomeBangs}{JavaScript}{\href{https://extensions.gnome.org/extension/7824/bangs-search/}{Gnome Extensions }}
+    \resumeItemListStart
+        \resumeItem
+        {A minimal Gnome extension that adds DuckDuckGo bangs support to the GNOME global search. Originally built as a personal project, it now has over 300 downloads.}
+\resumeItemListEnd
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-      \textbf{Google Cybersecurity} & \hfill \href{https://www.coursera.org/account/accomplishments/professional-cert/GZJ7LQGCFFZF}{Coursera (Mar 2024)}
-      \\[3.75pt]
-      \multicolumn{2}{@{}X@{}}{An eight course professional certificate program in cybersecurity. Equipped with skills in threat detection, incident response, network security, python automation, SQL etc. }
-    \end{tabularx}
+  \resumeSubHeadingListEnd
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-      \textbf{AI Security Fundamentals} & \hfill \href{https://security.certificates.lakera.ai/credentials/c46521d6-5748-4834-8bac-ecf7913c3ccc}{LakeraAI (Mar 2024)}
-      \\[3.75pt]
-      \multicolumn{2}{@{}X@{}}{AI Security Course, covering topics such as GenAI threats, cybersecurity frameworks, AI application security, LLM red teaming, and AI governance. }
-    \end{tabularx}
 
 %----------Extracurricular----------
 
 
   \section{Extracurricular}
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-    \textbf{St. Broseph Foundation --- Volunteer, Tech Team} & \hfill Dec 2022 - Feb 2023 \\[3.75pt]
-    \multicolumn{2}{@{}X@{}}{Support citizens of Bengaluru by developing and maintaining internal tools as part of the tech team, and assist with day-to-day activities at HQ.}
-    \end{tabularx}
+  \resumeSubHeadingListStart
+
+  \expSubheading
+    {St. Broseph Foundation}{Volunteer, Tech Team}{Oct 2024 - Present}
+    \resumeItemListStart
+      \resumeItem
+        {Support citizens of Bengaluru by developing and maintaining internal tools as part of the tech team, and assist with day-to-day activities at HQ.}
+        \resumeItemListEnd
+  \expSubheading
+      {PointBlank}{Member}{Dec 2022 - Present}
+      \resumeItemListStart
+        \resumeItem
+          {PointBlank is a college club of over 80 programmers who work to promote coding culture in colleges by participating in more than 10 contests and organising technical seminars}
+      \resumeItemListEnd
+
+  \resumeSubHeadingListEnd
 
 
-    \begin{tabularx}{\linewidth}{ @{}l r@{} }
-      \textbf{PointBlank --- Member} & \hfill Dec 2022 - Present \\[3.75pt]
-      \multicolumn{2}{@{}X@{}}{PointBlank is a group of over 80 programmers who work to promote coding culture in colleges by participating in more than 10 contests and organising technical seminars}
-    \end{tabularx}
+%-------------------------------------------
 
+\end{document}
 
-    \end{document}
+% ------------------------------------------
